@@ -1,5 +1,6 @@
 ---
 import Header from "@components/Header.astro";
+import LanguageSelector from "@components/LanguageSelector.astro";
 
 interface Props {
   title: string;
@@ -22,5 +23,8 @@ const { title } = Astro.props;
     <Header />
     <slot />
   </body>
+  <footer>
+    <LanguageSelector />
+  </footer>
 </html>
 <style is:global></style>
