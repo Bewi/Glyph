@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import BandCard from "@components/BandCard.astro";
+
+const title = "Content collection";
+const bands = await getCollection("bands", ({ id }) => id.startsWith("fr/"));
+---
+
+<Layout title={title}>
+  <h1>{title}</h1>
+  {bands.map((b: any) => <BandCard bandName={b.data.bandName} id={b.id} />)}
+</Layout>

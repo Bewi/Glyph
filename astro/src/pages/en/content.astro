@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import BandCard from "@components/BandCard.astro";
 
-const title = "Content collection";
-const bands = await getCollection("bands");
+const title = "Liste de contenu";
+const bands = await getCollection("bands", ({ id }) => id.startsWith("/en"));
+console.log(bands);
 ---
 
 <Layout title={title}>

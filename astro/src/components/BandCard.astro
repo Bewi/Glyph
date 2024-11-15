@@ -1,7 +1,11 @@
 ---
 const { bandName, id } = Astro.props;
+console.log(id);
+const [language, bandId] = id.split("/");
+const path = `/${language}/bands/${bandId}`;
 ---
 
-<a href={"/bands/" + id} class="card">
+<h2>Band card title</h2>
+<a href={path} class="card">
   <h3>{bandName}</h3>
 </a>

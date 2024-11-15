@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import type { Props } from "astro";
+import Layout from "@layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const bands = await getCollection("bands");
+  return bands.map((b: any) => {
+    const [lang, id] = b.id.split("/");
+    return { params: { lang, bandId: id }, props: b };
+  });
+};
+
+const band: any = Astro.props as Props;
+---
+
+<Layout title={"Content: " + band.data.bandName}>
+  <h1>{band.data.bandName}!</h1>
+  <p>Genre: {band.data.genre}</p>
+  <p>Fan: {band.data.fan}</p>
+</Layout>
