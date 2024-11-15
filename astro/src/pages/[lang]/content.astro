@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import { languages } from "@i18n/ui";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "@layouts/Layout.astro";
+import BandCard from "@components/BandCard.astro";
+
+export const getStaticPaths = () =>
+  Object.keys(languages).map((l) => ({ params: { lang: l } }));
+
+const lang = getLangFromUrl(Astro.url);
+const title = useTranslations(lang)("content.title");
+
+const bands = await getCollection("bands", ({ id }) =>
+  id.startsWith(`${lang}/`)
+);
+---
+
+<Layout title={title}>
+  <h1>{title}</h1>
+  {bands.map((b: any) => <BandCard bandName={b.data.bandName} id={b.id} />)}
+</Layout>

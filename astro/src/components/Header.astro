@@ -1,11 +1,16 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+---
+
 <header>
   <nav aria-labelledby="mainmenu">
     <ul>
       <li>
-        <a href="/fr">Home</a>
+        <a href={`/${lang}`}>Home</a>
       </li>
       <li>
-        <a href="/fr/content">Contents</a>
+        <a href={`/${lang}/content`}>Contents</a>
       </li>
     </ul>
   </nav>

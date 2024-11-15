@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { Props } from "astro";
 import Layout from "@layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 export const getStaticPaths = async () => {
   const bands = await getCollection("bands");
@@ -12,10 +13,12 @@ export const getStaticPaths = async () => {
 };
 
 const band: any = Astro.props as Props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title={"Content: " + band.data.bandName}>
-  <h1>{band.data.bandName}!</h1>
-  <p>Genre: {band.data.genre}</p>
-  <p>Fan: {band.data.fan}</p>
+<Layout title={t("band.page.title") + band.data.bandName}>
+  <h1>{t("band.page.title")} {band.data.bandName}!</h1>
+  <p>{t("band.page.genraLabel")}: {band.data.genre}</p>
+  <p>{t("band.page.fanLabel")}: {band.data.fan}</p>
 </Layout>
