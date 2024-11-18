@@ -17,6 +17,6 @@ const bands = await getCollection("bands", ({ id }) =>
 ---
 
 <Layout title={title}>
-  <h1>{title}</h1>
+  <h1 class="headline">{title}</h1>
   {bands.map((b: any) => <BandCard bandName={b.data.bandName} id={b.id} />)}
 </Layout>

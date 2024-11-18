@@ -18,7 +18,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t("band.page.title") + band.data.bandName}>
-  <h1>{t("band.page.title")} {band.data.bandName}!</h1>
+  <h1 class="headline">{t("band.page.title")} {band.data.bandName}!</h1>
   <p>{t("band.page.genraLabel")}: {band.data.genre}</p>
   <p>{t("band.page.fanLabel")}: {band.data.fan}</p>
 </Layout>

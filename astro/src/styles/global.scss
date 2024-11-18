@@ -1,0 +1,20 @@
+@use './fonts.scss';
+@use './variables.scss';
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.headline {
+  color: var(--headline-color);
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color)
+}
+
+a {
+  color: var(--button-color);
+}
