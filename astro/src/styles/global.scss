@@ -4,6 +4,8 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 .headline {
@@ -17,4 +19,5 @@ button {
 
 a {
   color: var(--button-color);
+  text-decoration: none;
 }
