@@ -1,0 +1,18 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+import "@styles/header.scss";
+const lang = getLangFromUrl(Astro.url);
+---
+
+<header>
+  <nav class="navbar" aria-labelledby="mainmenu">
+    <ul>
+      <li>
+        <a href={`/${lang}`}>Home</a>
+      </li>
+      <li>
+        <a href={`/${lang}/content`}>Contents</a>
+      </li>
+    </ul>
+  </nav>
+</header>

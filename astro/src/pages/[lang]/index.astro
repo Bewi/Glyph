@@ -1,0 +1,19 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getLangFromUrl, getLangPath, useTranslations } from "@i18n/utils";
+import { languages } from "@i18n/ui";
+
+export const getStaticPaths = () =>
+  Object.keys(languages).map((l) => ({ params: { lang: l } }));
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("index.title")}>
+  <main>
+    <h1 class="headline">{t("index.title")}</h1>
+  </main>
+</Layout>
+
+<style></style>

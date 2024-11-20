@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+const { bandName, id } = Astro.props;
+const [, bandId] = id.split("/");
+const lang = getLangFromUrl(Astro.url);
+const path = `/${lang}/bands/${bandId}`;
+const t = useTranslations(lang);
+---
+
+<h2>{t("band.card.title")}</h2>
+<a href={path} class="card">
+  <h3>{bandName}</h3>
+</a>
