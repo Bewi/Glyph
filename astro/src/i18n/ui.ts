@@ -21,6 +21,5 @@ export const ui = {
     "band.page.title": "Groupe:",
     "band.page.genraLabel": "Genre",
     "band.page.fanLabel": "Decouvert part"
-    
   }
 }
