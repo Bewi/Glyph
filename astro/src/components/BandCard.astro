@@ -3,7 +3,7 @@ import { getLangFromUrl, useTranslations } from "@i18n/utils";
 const { bandName, id } = Astro.props;
 const [, bandId] = id.split("/");
 const lang = getLangFromUrl(Astro.url);
-const path = `/${lang}/bands/${bandId}`;
+const path = `${lang}/bands/${bandId}`;
 const t = useTranslations(lang);
 ---
 

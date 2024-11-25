@@ -1,6 +1,7 @@
 ---
 import Header from "@components/Header.astro";
 import LanguageSelector from "@components/LanguageSelector.astro";
+import { getLangFromUrl } from "@i18n/utils";
 import "@styles/global.scss";
 
 interface Props {
@@ -8,12 +9,15 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const baseUrl = `http://localhost:4321${import.meta.env.BASE_URL}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
-    <base href={import.meta.env.BASE_URL} />
+    <base href={baseUrl} />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
