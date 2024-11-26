@@ -4,30 +4,20 @@ import { getLangFromUrl } from "@i18n/utils";
 
 const currentPath = Astro.url.pathname;
 const currentLang = getLangFromUrl(Astro.url);
-const rootLangPath = `/${currentLang}`;
 
-// This is a bit over-complicated but it covers root path with /en and other paths such as /en/whatever
-const currentLangPath = currentPath.endsWith(rootLangPath)
-  ? rootLangPath
-  : `/${currentLang}/`;
-
-const languagePaths = Object.entries(languages).map(([lang, label]) => {
-  const langReplacement = currentPath.endsWith(rootLangPath)
-    ? "/" + lang
-    : `/${lang}/`;
-  return {
-    path: currentPath.replace(currentLangPath, langReplacement),
-    label,
-  };
-});
+const [lang, label] = Object.entries(languages).find(
+  ([lang]) => lang !== currentLang
+) || ["", ""];
+let langReplacement = "/" + lang;
+let rootLangPath = `/${currentLang}`;
+if (!currentPath.endsWith(rootLangPath)) {
+  rootLangPath += "/";
+  langReplacement += "/";
+}
+const langPath = {
+  path: currentPath.replace(rootLangPath, langReplacement),
+  label,
+};
 ---
 
-<ul>
-  {
-    languagePaths.map((langPath) => (
-      <li>
-        <a href={langPath.path}>{langPath.label}</a>
-      </li>
-    ))
-  }
-</ul>
+<a class="button" href={langPath.path}>{langPath.label}</a>

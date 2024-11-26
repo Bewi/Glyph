@@ -1,10 +1,11 @@
 ---
 import { getLangFromUrl } from "@i18n/utils";
 import "@styles/header.scss";
+import LanguageSelector from "./LanguageSelector.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<header>
+<header class="header">
   <nav class="navbar" aria-labelledby="mainmenu">
     <ul class="navbar__list">
       <li>
@@ -15,4 +16,6 @@ const lang = getLangFromUrl(Astro.url);
       </li>
     </ul>
   </nav>
+
+  <LanguageSelector />
 </header>

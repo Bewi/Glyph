@@ -10,8 +10,6 @@ interface Props {
 
 const { title } = Astro.props;
 
-console.log(Astro.url);
-
 const lang = getLangFromUrl(Astro.url);
 const baseUrl = Astro.url.origin + import.meta.env.BASE_URL;
 ---
@@ -31,8 +29,6 @@ const baseUrl = Astro.url.origin + import.meta.env.BASE_URL;
     <Header />
     <slot />
   </body>
-  <footer>
-    <LanguageSelector />
-  </footer>
+  <footer></footer>
 </html>
 <style is:global></style>

@@ -1,15 +1,24 @@
+.header {
+  background-color: var(--primary-color);
+  padding: var(--content-spacing-1);
+  color: var(--primary-alt-color);
+  display: flex;
+}
+
+.navbar {
+  flex-grow: 1;
+}
+
 .navbar__list {
   list-style: none;
-  background-color: var(--primary-color);
   display: flex;
   justify-content: flex-end;
   margin: 0;
-  padding: 1rem;
 }
 
 .navbar__link {
   display: block;
   padding: var(--content-spacing-1);
-  color: var(--primary-alt-color);
   text-decoration: none;
+  color: var(--primary-alt-color); // TODO Maye move this to a general rule about links ?
 }
