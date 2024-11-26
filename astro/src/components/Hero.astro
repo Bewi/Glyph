@@ -1,0 +1,17 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/hero.scss";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<article class="container container--primary">
+  <h1 class="hero__title">{t("index.title")}</h1>
+  <div class="hero__content">
+    <div>
+      <p>{t("hero.text-1")}</p>
+      <p>{t("hero.text-2")}</p>
+    </div>
+  </div>
+</article>

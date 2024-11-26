@@ -1,7 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { languages } from "@i18n/ui";
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+import "@styles/container.scss";
 
 export const getStaticPaths = () =>
   Object.keys(languages).map((l) => ({ params: { lang: l } }));
@@ -12,7 +14,19 @@ const t = useTranslations(lang);
 
 <Layout title={t("index.title")}>
   <main>
-    <h1 class="headline">{t("index.title")}</h1>
+    <Hero />
+    <article class="container">
+      <h1>{t("index.title")}</h1>
+      <div>
+        <p>{t("hero.text-1")}</p>
+      </div>
+    </article>
+    <article class="container container--secondary">
+      <h1>{t("index.title")}</h1>
+      <div>
+        <p>{t("hero.text-1")}</p>
+      </div>
+    </article>
   </main>
 </Layout>
 

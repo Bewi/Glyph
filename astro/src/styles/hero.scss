@@ -1,0 +1,11 @@
+.hero__title {
+  font-size: 4rem;
+  margin: 1rem;
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
