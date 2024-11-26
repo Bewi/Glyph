@@ -6,12 +6,12 @@ const lang = getLangFromUrl(Astro.url);
 
 <header>
   <nav class="navbar" aria-labelledby="mainmenu">
-    <ul>
+    <ul class="navbar__list">
       <li>
-        <a href={`${lang}`}>Home</a>
+        <a class="navbar__link" href={`${lang}`}>Home</a>
       </li>
       <li>
-        <a href={`${lang}/content`}>Contents</a>
+        <a class="navbar__link" href={`${lang}/content`}>Contents</a>
       </li>
     </ul>
   </nav>

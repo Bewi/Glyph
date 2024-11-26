@@ -1,23 +1,14 @@
 @use './fonts.scss';
 @use './variables.scss';
 
+html {
+  font-size: 16px;
+}
+
+
 body {
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--bg-alt-color);
   margin: 0;
   padding: 0;
-}
-
-.headline {
-  color: var(--headline-color);
-}
-
-button {
-  background-color: var(--button-color);
-  color: var(--button-text-color)
-}
-
-a {
-  color: var(--button-color);
-  text-decoration: none;
 }

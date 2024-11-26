@@ -1,16 +1,15 @@
-.navbar {
-  ul {
-    list-style: none;
-    background-color: var(--button-color);
-    display: flex;
-  }
+.navbar__list {
+  list-style: none;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 1rem;
+}
 
-  a {
-    display: block;
-    padding: var(--content-spacing-1);
-    color: var(--button-text-color);
-    &:hover {
-      background-color: var(--button-hover-color);
-    }
-  }
+.navbar__link {
+  display: block;
+  padding: var(--content-spacing-1);
+  color: var(--primary-alt-color);
+  text-decoration: none;
 }
