@@ -1,0 +1,19 @@
+.container {
+  display: block;
+  width: 100%;
+  padding: 3rem 2rem;
+}
+
+.container--primary {
+  background-color: var(--primary-color);
+  color: var(--primary-alt-color);
+}
+
+.container--secondary {
+  background-color: var(--secondary-color);
+  color: var(--secondary-alt-color);
+}
+
+.container__content {
+  display: grid;
+}
