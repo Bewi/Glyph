@@ -1,14 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import { languages } from "@i18n/ui";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { useTranslations } from "@i18n/utils";
 import Layout from "@layouts/Layout.astro";
 import BandCard from "@components/BandCard.astro";
 
 export const getStaticPaths = () =>
   Object.keys(languages).map((l) => ({ params: { lang: l } }));
 
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.params.lang as "fr" | "en";
 const title = useTranslations(lang)("content.title");
 
 const bands = await getCollection("bands", ({ id }) =>
