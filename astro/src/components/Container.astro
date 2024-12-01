@@ -1,0 +1,15 @@
+---
+import "@styles/container.scss";
+const { title, containerClasses } = Astro.props;
+---
+
+<article class={"container " + containerClasses}>
+  <div class="container__wrapper">
+    <slot name="header">
+      <h1>{title}</h1>
+    </slot>
+    <div class="container__content">
+      <slot name="content"> CONTENT HERE </slot>
+    </div>
+  </div>
+</article>

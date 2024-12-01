@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
   padding: 3rem 2rem;
+  box-sizing: border-box;
 }
 
 .container--primary {
@@ -14,6 +15,22 @@
   color: var(--secondary-alt-color);
 }
 
+.container__wrapper {
+  max-width: var(--container-size);
+  margin: auto;
+}
+
 .container__content {
   display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.container__item {
+  grid-column: 1 / 5;
+}
+
+.container__item--end {
+  grid-column: 3 / 7;
 }

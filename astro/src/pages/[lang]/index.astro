@@ -2,8 +2,8 @@
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { languages } from "@i18n/ui";
 import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
 import Hero from "@components/Hero.astro";
-import "@styles/container.scss";
 
 export const getStaticPaths = () =>
   Object.keys(languages).map((l) => ({ params: { lang: l } }));
@@ -15,18 +15,12 @@ const t = useTranslations(lang);
 <Layout title={t("index.title")}>
   <main>
     <Hero />
-    <article class="container">
-      <h1>{t("index.title")}</h1>
-      <div>
-        <p>{t("hero.text-1")}</p>
-      </div>
-    </article>
-    <article class="container container--secondary">
-      <h1>{t("index.title")}</h1>
-      <div>
-        <p>{t("hero.text-1")}</p>
-      </div>
-    </article>
+    <Container title={t("index.title")}>
+      <p class="container__item--end" slot="content">{t("hero.text-1")}</p>
+    </Container>
+    <Container containerClasses="container--secondary" title={t("index.title")}>
+      <p class="container__item" slot="content">{t("hero.text-1")}</p>
+    </Container>
   </main>
 </Layout>
 

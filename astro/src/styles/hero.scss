@@ -4,8 +4,5 @@
 }
 
 .hero__content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  grid-column: 2 / 6;
 }
