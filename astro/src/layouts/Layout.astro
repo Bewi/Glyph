@@ -1,4 +1,5 @@
 ---
+import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { getLangFromUrl } from "@i18n/utils";
 import "@styles/global.scss";
@@ -28,6 +29,6 @@ const baseUrl = Astro.url.origin + import.meta.env.BASE_URL;
     <Header />
     <slot />
   </body>
-  <footer></footer>
+  <Footer />
+  <style is:global></style>
 </html>
-<style is:global></style>
